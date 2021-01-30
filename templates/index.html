@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <link href="{{ url_for('static', filename='styles/index.css') }}" rel="stylesheet">
+  <title>Deploy ML model using flask</title>
+</head>
+
+<body>
+    <div class="login">
+        <h1>Loan Prediction Application</h1>
+            <h2>Enter your personal data to know if you will be given a loan</h2>
+    </div>
+ 
+    <div class="output">
+        {%if output == "Approved"%}
+            {{output}}
+            <img src="{{ url_for('static', filename='green_tick.svg') }}" alt="Green_Tick" width="40" height="40"> 
+        {%endif%}
+        {%if output == "Rejected"%}
+            {{output}}
+            <img src="{{ url_for('static', filename='red_x.svg') }}" alt="Red_X" width="40" height="40">
+        {%endif%}
+    
+    </div> 
+
+ 
+
+
+<div class="super_container">
+
+    <div class="container">
+
+        <form action="{{url_for('prediction')}}" method="POST" class="inputs">
+            <label class="key" for="Property_Area"> Property Area:</label> <br>
+                <input type="radio" name="Property_Area" value="Rural" required>
+                    <label for="Rural">Rural</label>
+                <input type="radio" name="Property_Area" value="Semiurban" required>
+                    <label for="Semiurban">Semi-urban</label> 
+                <input type="radio" name="Property_Area" value="Urban" required>
+                    <label for="Urban">Urban</label> 
+
+                <br><br>
+            
+         
+            <label class="key" for="Dependents"> Dependents:</label> <br>
+                <input type="radio" name="Dependents" value="0" required>
+                    <label for="0">0</label>
+                <input type="radio" name="Dependents" value="1" required>
+                    <label for="1">1</label> 
+                <input type="radio" name="Dependents" value="2" required>
+                    <label for="2">2</label> 
+                <input type="radio" name="Dependents" value="3+" required>
+                    <label for="3+">3+</label> 
+           
+            <br><br>
+    
+            <label class="key" for="Credit_History">Credit History:</label> <br>
+                <input type="radio" name="Credit_History" value="1" required>
+                    <label for="not_present">All debts paid</label>
+                <input type="radio" name="Credit_History" value="0" required>
+                    <label for="present">Not paid</label> 
+    
+            <br><br>
+    
+            <label class="key" for="Education">Education:</label> <br>
+                <input type="radio" name="Education" value="Graduate" required>
+                    <label for="graduate">Graduate</label>
+                <input type="radio" name="Education" value="Not Graduate" required>
+                    <label for="not_graduate">Not Graduate</label> 
+    
+            <br><br>
+    
+            <label class="key" for="Self_Employed">Self Employed:</label> <br>
+                <input type="radio" name="Self_Employed" value="Yes" required>
+                    <label for="selfemployed_yes">Yes</label>
+                <input type="radio" name="Self_Employed" value="No" required>
+                    <label for="selfemployed_no">No</label> 
+            
+    
+            <br><br>
+    
+            <label class="key" for="Married">Married:</label> <br>
+                <input type="radio" name="Married" value="Yes" required>
+                    <label for="married_yes">Yes</label>
+                <input type="radio" name="Married" value="No" required>
+                    <label for="married_no">No</label> 
+    
+            <br><br>
+    
+            <label class="key" for="Gender">Gender:</label> <br>
+                <input type="radio" name="Gender" value="Male" required>
+                    <label for="Male">Male</label>
+                <input type="radio" name="Gender" value="Female" required>
+                    <label for="Female">Female</label> 
+            
+    
+            <br><br>
+    
+            <div class="box">
+                <div class="elements">
+                    <label class="key" for="ApplicantIncome"> Applicant Income ($) <br>
+                        <input type="text" name="ApplicantIncome" required>
+                     </label>
+                </div>
+                <div class="elements">
+                    <label class="key" for="CoapplicantIncome"> Co-Applicant Income ($) <br>
+                        <input type="text" name="CoapplicantIncome" required>
+                    </label>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="box">
+
+                <div class="elements">
+                    <label class="key" for="LoanAmount"> Loan Amount ($)</label> <br>
+                        <input type="text" name="LoanAmount" required>
+                </div>
+
+                <div class="elements">
+                    <label class="key" for="Loan_Amount_Term"> Loan Amount Term (days)</label><br>
+                        <input type="text" name="Loan_Amount_Term" required>
+                        
+                </div>  
+            </div>
+            
+            <br>
+            
+            <button class="button" type="submit"> PREDICT </button>
+           
+            
+   
+        </form>   
+    </div>  
+    
+</div>
+
+
+   <div class="links">
+    <a href="https://github.com/waiseheil/Flask_API_Loan_Prediction" target="_blanck">Github</a>
+    <img src="{{ url_for('static', filename='github-logo.png') }}" alt="Red_X" width="20" height="20" />
+    |
+    <a href="https://www.linkedin.com/in/pablo-vales-castro-181b40107/" target="_blanck">LinkedIn</a>
+    <img src="{{ url_for('static', filename='linkedin-logo.png') }}" alt="Red_X" width="20" height="20" />
+</div>
+    
+</body>
+
+
+
+
+    
+
+</html>
