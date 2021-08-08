@@ -30,22 +30,33 @@ test_data = pd.read_csv('https://raw.githubusercontent.com/dphi-official/Dataset
 
 ## Feature information:
 
-1. Loan_ID: A unique ID assigned to every loan applicant
-2. Gender: Gender of the applicant (Male, Female)
-3. Married: The marital status of the applicant (Yes, No)
-4. Dependents: No. of people dependent on the applicant (0,1,2,3+)
-5. Education: Education level of the applicant (Graduated, Not Graduated)
-6. Self_Employed: If the applicant is self-employed or not (Yes, No)
-7. ApplicantIncome: The amount of income the applicant earns
-8. CoapplicantIncome: The amount of income the co-applicant earns
-9. LoanAmount: The amount of loan the applicant has requested for
-10. Loan_Amount_Term: The  no. of days over which the loan will be paid
-11. Credit_History: A record of a borrower's responsible repayment of debts (1- has all debts paid, 0- not paid)
-12. Property_Area : The type of location where the applicant’s property lies (Rural, Semiurban, Urban)
+1. **Loan_ID**: A unique ID assigned to every loan applicant
+2. **Gender**: Gender of the applicant (Male, Female)
+3. **Married**: The marital status of the applicant (Yes, No)
+4. **Dependents**: No. of people dependent on the applicant (0,1,2,3+)
+5. **Education**: Education level of the applicant (Graduated, Not Graduated)
+6. **Self_Employed**: If the applicant is self-employed or not (Yes, No)
+7. **ApplicantIncome**: The amount of income the applicant earns
+8. **CoapplicantIncome**: The amount of income the co-applicant earns
+9. **LoanAmount**: The amount of loan the applicant has requested for
+10. **Loan_Amount_Term**: The  no. of days over which the loan will be paid
+11. **Credit_History**: A record of a borrower's responsible repayment of debts (1- has all debts paid, 0- not paid)
+12. **Property_Area**: The type of location where the applicant’s property lies (Rural, Semiurban, Urban)
 
-Target: 
+**Target**: 
 
-13. Loan_Status: Loan granted or not (1 for granted, 0 for not granted)
+13. **Loan_Status**: Loan granted or not (1 for granted, 0 for not granted)
+
+# Files/directories in repository
+
+- **jupyter_notebook directory**: contains a Jupyter notebook with the code for the data wrangling and modelling of the dataset
+- **model directory**: contains pickled files with the trained logistic regression model, feature encoding and scaling. 
+- **static directory**: contains images used for the front-end and a *styles* directory:
+  - **styles directory**: contains the CSS stylesheet (index.css)
+- **templates directory**: contains the HTML file (index.html)
+- **Procfile**: required file for deployment in Heroku. It specifies the commands that are executed by the app on startup. Note that for the deployment to work properly this file cannot have any extension.
+- **requierements.txt**: file with versions and libraries necessary for this project.
+- **server.py**: back-end code that makes use of Flask as its web framework.
 
 # Model
 
@@ -53,9 +64,8 @@ Model based on logistic regression with recursive feature elimination (RFE) for 
 
 # Deployment
 
-- Flask is used as the selected framework for the back-end logic. 
-- The machine learning model is saved and loaded to the back-end by pickling
-- The web-app is deployed to Heroku.
+- Flask is used as the selected framework for the back-end logic. See details in the [server.py](./server.py) file
+- The web application is deployed to Heroku. The Procfile and Requierements.txt files and their location in the directory tree should not be changed as for the correct deployment to [Heroku](https://www.heroku.com/). 
 
 
 
