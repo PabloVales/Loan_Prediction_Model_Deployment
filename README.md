@@ -1,5 +1,7 @@
 # Deployment of a machine learning model
 
+![Used frameworks](static/flask_python_heroku_image.jpeg "Used frameworks")
+
 The objective of this project is to showcase the deployment of a machine learning model. Such model is based on a binary classification that predicts whether a client will be given a loan. Since the main objective is the deployment itself, the approach taken for this classification is a simple one based on a logistic regression model and optimized with recursive feature elimination (RFE). The deployed web-app can be found here: https://loan-prediction-webapp.herokuapp.com/
 
 # Content
@@ -65,12 +67,8 @@ Model based on logistic regression with recursive feature elimination (RFE) for 
 # Deployment
 
 - Flask is used as the selected framework for the back-end logic. See details in the [server.py](./server.py) file
-- The web application is deployed to Heroku. The Procfile and Requierements.txt files and their location in the directory tree should not be changed as for the correct deployment to [Heroku](https://www.heroku.com/). 
+- The web application is deployed to Heroku. The Procfile and Requierements.txt files and their location in the directory tree should not be changed as for the correct deployment to [Heroku](https://www.heroku.com/). Information on how to deploy to Heroku in conjuction with Git can be found [here](https://devcenter.heroku.com/articles/git)
 
+![Web-app functionality](static/web_app_gif.gif "Web-app functionality")
 
-
-Pickling is used for the implementation on Flask. Gunicorn is used in conjuction with Heroku for the deployment of the web app. 
-Corresponding versions of the used dependencies can be found in 'Requirements.txt'. Note that this file is required for a succesful deployment in Heroku.  
-
-HTML, CSS and Jinja2 were used for the front-end development (client side)
 
