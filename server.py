@@ -16,6 +16,7 @@ import sklearn
 
 app = Flask(__name__)
 
+# Define helper functions to load model/transformer
 def load_model():
     return pickle.load(open('./model/model.pkl','rb'))
 
@@ -42,7 +43,7 @@ def prediction():
         dic[i] = [j]
             
 #   Create dataframe with input variables from the client 
-#    features_df = pd.DataFrame(list(dic.values()), columns=list(dic.keys()))
+#   features_df = pd.DataFrame(list(dic.values()), columns=list(dic.keys()))
     features_df = pd.DataFrame(dic)
     features_df = features_df[features_df.columns.sort_values()]
     
