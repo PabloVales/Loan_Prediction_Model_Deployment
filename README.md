@@ -62,7 +62,7 @@ test_data = pd.read_csv('https://raw.githubusercontent.com/dphi-official/Dataset
 
 # Model
 
-Model based on logistic regression with recursive feature elimination (RFE) for a binary classification (loan approved or rejected) with an accuracy of 89%. The code for the data wrangling and the machine learning model is provided as a Jupyter Notebook.
+Model based on logistic regression with recursive feature elimination (RFE) for a binary classification (loan approved or rejected) with an F1-score of 86% on the test set (as shown in the leaderboard of the [Dphi Datathon](https://dphi.tech/challenges/loan-or-no-loan/54/leaderboard/practice/) under the *waiseheil* nickname. The code for the data wrangling and the machine learning model is provided as a Jupyter Notebook.
 
 # Deployment
 
